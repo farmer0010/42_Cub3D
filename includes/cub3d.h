@@ -18,8 +18,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
-# include <mlx.h>
-# include "libft.h"
+# include "../minilibx-linux/mlx.h"
+# include "../libft/libft.h"
 # include "get_next_line.h"
 
 # define WIN_WIDTH 1280
@@ -107,5 +107,7 @@ typedef struct s_game
 	t_img		screen;
 	t_img		textures[4];
 }	t_game;
+
+int	parse_map(char *file, t_game *game);
 
 #endif

@@ -22,9 +22,9 @@
 
 char	*get_next_line(int fd);
 char	*free_line(char **ptr);
-size_t	ft_strlen(const char *str);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
+size_t	gnl_strlen(const char *str);
+char	*gnl_strchr(const char *str, int c);
+char	*gnl_strjoin(char *s1, char *s2);
 char	*get_line(char *str);
 char	*save_remain(char *str);
 char	*read_stack(int fd, char *stack);

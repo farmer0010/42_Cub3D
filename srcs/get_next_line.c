@@ -21,7 +21,7 @@ char	*read_stack(int fd, char *stack)
 	if (!buf)
 		return (NULL);
 	read_bytes = 1;
-	while ((!stack || !ft_strchr(stack, '\n')) && read_bytes > 0)
+	while ((!stack || !gnl_strchr(stack, '\n')) && read_bytes > 0)
 	{
 		read_bytes = read(fd, buf, BUFFER_SIZE);
 		if (read_bytes < 0)
@@ -31,7 +31,7 @@ char	*read_stack(int fd, char *stack)
 			return (NULL);
 		}
 		buf[read_bytes] = '\0';
-		stack = ft_strjoin(stack, buf);
+		stack = gnl_strjoin(stack, buf);
 	}
 	free(buf);
 	return (stack);
