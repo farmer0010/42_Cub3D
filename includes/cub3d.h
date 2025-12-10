@@ -64,6 +64,7 @@ typedef struct s_map
 	char	*ea_path;
 	int		floor_color;
 	int		ceil_color;
+	char	*raw_data;
 }	t_map;
 
 typedef struct s_player
@@ -108,6 +109,7 @@ typedef struct s_game
 	t_img		textures[4];
 }	t_game;
 
-int	parse_map(char *file, t_game *game);
+int		parse_map(char *file, t_game *game);
+int     validate_map(t_game *game);
 
 #endif

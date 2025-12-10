@@ -27,7 +27,8 @@ LIBS        = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 SRC_FILES   = main.c \
               parsing.c \
               get_next_line.c \
-              get_next_line_utils.c
+              get_next_line_utils.c \
+			  validate_map.c
 
 SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 OBJS        = $(SRCS:.c=.o)
