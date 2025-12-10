@@ -109,7 +109,26 @@ typedef struct s_game
 	t_img		textures[4];
 }	t_game;
 
+/* main.c */
+int		close_game(t_game *game);
+
+/* parsing.c */
 int		parse_map(char *file, t_game *game);
-int     validate_map(t_game *game);
+
+/* parse_utils.c */
+int		check_file_name(char *file);
+void	init_map_info(t_game *game);
+int		is_space(char c);
+void	free_split(char **split);
+
+/* parse_data.c */
+int		parse_line(char *line, t_game *game);
+
+/* parse_map.c */
+int		process_map(t_game *game);
+int		parse_player(t_game *game);
+
+/* validate_map.c */
+int		validate_map(t_game *game);
 
 #endif
