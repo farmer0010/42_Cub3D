@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juyoukim <juyoukim@student.42gyeongsa>     +#+  +:+       +#+        */
+/*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:48:12 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/08 11:48:16 by juyoukim         ###   ########.fr       */
+/*   Updated: 2025/12/13 12:31:06 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,9 @@ int		parse_player(t_game *game);
 
 /* validate_map.c */
 int		validate_map(t_game *game);
+
+/* dda.c */
+void	dda_algo(t_game *g, t_ray *r, int x);
+void	init_ray_info(t_ray *ray);
 
 #endif
