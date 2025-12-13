@@ -23,14 +23,15 @@ INCLUDES    = -I$(INCS_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 LIBS        = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 # --- Source Files ---
-# 여기에 .c 파일들을 계속 추가하면 됩니다.
-SRC_FILES   = main.c \
-              parsing.c \
-              get_next_line.c \
-              get_next_line_utils.c \
-			  validate_map.c
+SRCS        = $(wildcard srcs/*.c)
+# 귀찮아서 일단 와일드 카드로 바꾸고 나중에 C 파일 다 정리되면 다시 고치자
+# SRC_FILES   = main.c \
+#               parsing.c \
+#               get_next_line.c \
+#               get_next_line_utils.c \
+# 			  validate_map.c
 
-SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
+# SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 OBJS        = $(SRCS:.c=.o)
 
 # --- Rules ---
