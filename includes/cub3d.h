@@ -65,7 +65,7 @@ typedef struct s_map
 	int		floor_color;
 	int		ceil_color;
 	char	*raw_data;
-	int		map_flag; // 0:시작전, 1:작성중, 2:끝남(빈줄만남) -> 이 상태 관리용
+	int		map_flag; // 0:시작전, 1:작성중, 2:끝남(빈줄만남) -> 상태 관리용
 }   t_map;
 
 typedef struct s_player
@@ -125,6 +125,10 @@ void	free_split(char **split);
 
 /* parse_data.c */
 int		parse_line(char *line, t_game *game);
+
+/* parse_elements.c */
+int		get_texture(char *line, char **target, t_game *game);
+int		get_color(char *line, int *target, t_game *game);
 
 /* parse_map.c */
 int		process_map(t_game *game);

@@ -32,7 +32,7 @@ static char	**copy_map(t_game *game)
 	char	**new_map;
 	int		i;
 
-	new_map = (char **)malloc(sizeof(char *) * (game->map.height + 1));
+	new_map = (char **)ft_calloc(game->map.height + 1, sizeof(char *));
 	if (! new_map)
 		return (NULL);
 	i = 0;
@@ -52,7 +52,7 @@ static char	**copy_map(t_game *game)
 
 static int	flood_fill(t_game *game, int x, int y, char **map)
 {
-	if (x < 0 || y < 0 || y > game->map.height || \
+	if (x < 0 || y < 0 || y >= game->map.height || \
 		x >= (int)ft_strlen(map[y]))
 		return (0);
 	if (map[y][x] == '1' || map[y][x] == 'V')
@@ -68,12 +68,36 @@ static int	flood_fill(t_game *game, int x, int y, char **map)
 	return (1);
 }
 
+static int	check_map_content(t_game *game)
+{
+	int		x;
+	int		y;
+	char	c;
+
+	y = 0;
+	while (y < game->map.height)
+	{
+		x = 0;
+		while (game->map.grid[y][x])
+		{
+			c = game->map.grid[y][x];
+			if (!ft_strchr("01NESW ", c))
+				return (printf("Error\nInvalid character in map: '%c'\n", c), 0);
+			x++;
+		}
+		y++;
+	}
+	return (1);
+}
+
 int	validate_map(t_game *game)
 {
 	char	**map_copy;
 	int		p_x;
 	int		p_y;
 
+	if (! check_map_content(game))
+		return (0);
 	map_copy = copy_map(game);
 	if (!map_copy)
 		return (printf(ERR_MALLOC), 0);

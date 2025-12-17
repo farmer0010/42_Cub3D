@@ -39,6 +39,7 @@ LIBS        = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 SRC_FILES   = main.c \
               parsing.c \
               parse_utils.c \
+			  parse_elements.c \
               parse_data.c \
               parse_map.c \
               validate_map.c \
