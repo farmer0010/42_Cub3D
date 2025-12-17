@@ -65,8 +65,8 @@ typedef struct s_map
 	int		floor_color;
 	int		ceil_color;
 	char	*raw_data;
-	int		map_flag; // 0:시작전, 1:작성중, 2:끝남(빈줄만남) -> 상태 관리용
-}   t_map;
+	int		map_flag;
+}	t_map;
 
 typedef struct s_player
 {
@@ -117,7 +117,7 @@ int		close_game(t_game *game);
 int		parse_map(char *file, t_game *game);
 
 /* parse_utils.c */
-int     check_extension(char *file, char *ext);
+int		check_extension(char *file, char *ext);
 int		check_file_name(char *file);
 void	init_map_info(t_game *game);
 int		is_space(char c);

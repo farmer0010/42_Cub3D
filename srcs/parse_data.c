@@ -14,17 +14,17 @@
 
 static int	match_identifier(char *ptr, t_game *game)
 {
-	if (!ft_strncmp(ptr, "NO", 2))
+	if (!ft_strncmp(ptr, "NO", 2) && is_space(ptr[2]))
 		return (get_texture(ptr + 2, &game->map.no_path, game));
-	else if (!ft_strncmp(ptr, "SO", 2))
+	else if (!ft_strncmp(ptr, "SO", 2) && is_space(ptr[2]))
 		return (get_texture(ptr + 2, &game->map.so_path, game));
-	else if (!ft_strncmp(ptr, "WE", 2))
+	else if (!ft_strncmp(ptr, "WE", 2) && is_space(ptr[2]))
 		return (get_texture(ptr + 2, &game->map.we_path, game));
-	else if (!ft_strncmp(ptr, "EA", 2))
+	else if (!ft_strncmp(ptr, "EA", 2) && is_space(ptr[2]))
 		return (get_texture(ptr + 2, &game->map.ea_path, game));
-	else if (!ft_strncmp(ptr, "F", 1))
+	else if (!ft_strncmp(ptr, "F", 1) && is_space(ptr[1]))
 		return (get_color(ptr + 1, &game->map.floor_color, game));
-	else if (!ft_strncmp(ptr, "C", 1))
+	else if (!ft_strncmp(ptr, "C", 1) && is_space(ptr[1]))
 		return (get_color(ptr + 1, &game->map.ceil_color, game));
 	return (-1);
 }
