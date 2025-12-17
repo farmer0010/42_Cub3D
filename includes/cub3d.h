@@ -6,7 +6,7 @@
 /*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:48:12 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/13 13:15:44 by taewonki         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:17:49 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,9 +144,11 @@ void	init_ray_info(t_ray *ray);
 void	raycast(t_game *game);
 
 /* render.c */
-void	init_screen(t_game *g);
-void	render_image(t_game *g, t_ray *r);
+int		init_screen_info(t_game *g);
 void	my_pixel_put(t_img *img, int x, int y, int color);
+void	draw_vertical_line(t_game *game, t_ray *ray, int x);
 
+/* loop.c */
+int		main_loop(t_game *game);
 
 #endif

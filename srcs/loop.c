@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycasting.c                                       :+:      :+:    :+:   */
+/*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/12 15:42:45 by taewonki          #+#    #+#             */
-/*   Updated: 2025/12/17 13:22:31 by taewonki         ###   ########.fr       */
+/*   Created: 2025/12/17 12:40:36 by taewonki          #+#    #+#             */
+/*   Updated: 2025/12/17 12:57:56 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	raycast(t_game *game)
+int	main_loop(t_game *game)
 {
-	t_ray	ray;
-
-	init_ray_info(&ray);
-
-	int	x;
-
-	x = -1;
-	while (++x < WIN_WIDTH)
-	{
-		dda_algo(game, &ray, x);
-		// 여기서부터 대충 이미지 찍어보기
-		draw_vertical_line(game, &ray, x);
-	}
+	raycast(game);
+	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
+	return (0);
 }
