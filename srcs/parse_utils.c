@@ -12,16 +12,25 @@
 
 #include "../includes/cub3d.h"
 
-int	check_file_name(char *file)
+int	check_extension(char *file, char *ext)
 {
 	size_t	len;
+	size_t	ext_len;
 
-	len = ft_strlen(file);
-	if (len < 4)
+	if (!file || !ext)
 		return (0);
-	if (ft_strncmp(file + len - 4, ".cub", 4) != 0)
+	len = ft_strlen(file);
+	ext_len = ft_strlen(ext);
+	if (len < ext_len)
+		return (0);
+	if (ft_strncmp(file + len - ext_len, ext, ext_len) != 0)
 		return (0);
 	return (1);
+}
+
+int	check_file_name(char *file)
+{
+	return (check_extension(file, ".cub"));
 }
 
 void	init_map_info(t_game *game)
@@ -36,6 +45,7 @@ void	init_map_info(t_game *game)
 	game->map.width = 0;
 	game->map.height = 0;
 	game->map.raw_data = NULL;
+	game->map.map_flag = 0;
 }
 
 int	is_space(char c)

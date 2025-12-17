@@ -6,7 +6,7 @@
 /*   By: juyoukim <juyoukim@student.42gyeongsa      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:24:44 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/08 13:24:48 by juyoukim         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:24:48 by juyoukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	read_file(char *file, t_game *game)
 	return (1);
 }
 
-
 int	parse_map(char *file, t_game *game)
 {
 	if (!check_file_name(file))
@@ -50,7 +49,6 @@ int	parse_map(char *file, t_game *game)
 	if (!parse_player(game))
 		return (0);
 	if (!validate_map(game))
-        return (0);
+		return (0);
 	return (1);
 }
-

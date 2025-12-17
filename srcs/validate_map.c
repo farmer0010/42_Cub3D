@@ -19,7 +19,7 @@ void	free_map_grid(char **grid)
 	if (!grid)
 		return ;
 	i = 0;
-	while(grid[i])
+	while (grid[i])
 	{
 		free(grid[i]);
 		i++;
@@ -33,7 +33,7 @@ static char	**copy_map(t_game *game)
 	int		i;
 
 	new_map = (char **)malloc(sizeof(char *) * (game->map.height + 1));
-	if(! new_map)
+	if (! new_map)
 		return (NULL);
 	i = 0;
 	while (i < game->map.height)
@@ -84,8 +84,6 @@ int	validate_map(t_game *game)
 		free_map_grid(map_copy);
 		return (printf("Error\nMap is not enclosed by walls\n"), 0);
 	}
-
-	printf("✅ Map Validation Success! (Map is closed)\n");
 	free_map_grid(map_copy);
 	return (1);
 }

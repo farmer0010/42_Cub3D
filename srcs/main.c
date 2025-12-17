@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	if (!parse_map(av[1], &game))
-    	return (1);
+		return (1);
 	(void)av;
 	game.mlx = mlx_init();
 	if (!game.mlx)

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: 42_cub3d_Architect                         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/12/08 12:00:00 by juyoukim          #+#    #+#              #
+#    Updated: 2025/12/10 14:40:00 by juyoukim         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # --- Program Name ---
 NAME        = cub3D
 
@@ -23,12 +35,15 @@ INCLUDES    = -I$(INCS_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 LIBS        = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 # --- Source Files ---
-# 여기에 .c 파일들을 계속 추가하면 됩니다.
+# [수정] 쪼개진 파싱 파일들을 모두 추가했습니다.
 SRC_FILES   = main.c \
               parsing.c \
+              parse_utils.c \
+              parse_data.c \
+              parse_map.c \
+              validate_map.c \
               get_next_line.c \
-              get_next_line_utils.c \
-			  validate_map.c
+              get_next_line_utils.c
 
 SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 OBJS        = $(SRCS:.c=.o)
