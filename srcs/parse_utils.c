@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juyoukim <juyoukim@student.42gyeongsa      +#+  +:+       +#+        */
+/*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 13:39:03 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/17 10:39:06 by juyoukim         ###   ########.fr       */
+/*   Updated: 2025/12/17 12:09:41 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,27 @@ void	init_map_info(t_game *game)
 	game->map.width = 0;
 	game->map.height = 0;
 	game->map.raw_data = NULL;
-	game->map.map_flag = 0;
+}
+
+void	init_ray_info(t_ray *ray)
+{
+	ray->camera_x = 0;
+	ray->ray_dir_x = 0;
+	ray->ray_dir_y = 0;
+	ray->map_x = 0;
+	ray->map_y = 0;
+	ray->side_dist_x = 0;
+	ray->side_dist_y = 0;
+	ray->delta_dist_x = 0;
+	ray->delta_dist_y = 0;
+	ray->perp_wall_dist = 0;
+	ray->step_x = 0;
+	ray->step_y = 0;
+	ray->hit = 0;
+	ray->side = 0;
+	ray->line_height = 0;
+	ray->draw_start = 0;
+	ray->draw_end = 0;
 }
 
 int	is_space(char c)

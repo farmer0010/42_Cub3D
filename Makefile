@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: 42_cub3d_Architect                         +#+  +:+       +#+         #
+#    By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/08 12:00:00 by juyoukim          #+#    #+#              #
-#    Updated: 2025/12/10 14:40:00 by juyoukim         ###   ########.fr        #
+#    Updated: 2025/12/17 12:08:43 by taewonki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,18 +35,15 @@ INCLUDES    = -I$(INCS_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 LIBS        = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 # --- Source Files ---
-# [수정] 쪼개진 파싱 파일들을 모두 추가했습니다.
-SRC_FILES   = main.c \
-              parsing.c \
-              parse_utils.c \
-			  parse_elements.c \
-              parse_data.c \
-              parse_map.c \
-              validate_map.c \
-              get_next_line.c \
-              get_next_line_utils.c
+SRCS        = $(wildcard srcs/*.c)
+# 귀찮아서 일단 와일드 카드로 바꾸고 나중에 C 파일 다 정리되면 다시 고치자
+# SRC_FILES   = main.c \
+#               parsing.c \
+#               get_next_line.c \
+#               get_next_line_utils.c \
+# 			  validate_map.c
 
-SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
+# SRCS        = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 OBJS        = $(SRCS:.c=.o)
 
 # --- Rules ---
