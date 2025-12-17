@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juyoukim <juyoukim@student.42gyeongsa      +#+  +:+       +#+        */
+/*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:55:24 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/08 12:55:29 by juyoukim         ###   ########.fr       */
+/*   Updated: 2025/12/17 12:01:50 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	if (!parse_map(av[1], &game))
-    	return (1);
+		return (1);
 	(void)av;
 	game.mlx = mlx_init();
 	if (!game.mlx)

@@ -6,7 +6,7 @@
 /*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:48:12 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/13 12:31:06 by taewonki         ###   ########.fr       */
+/*   Updated: 2025/12/13 13:15:44 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ typedef struct s_game
 	void		*win;
 	t_map		map;
 	t_player	player;
-	t_ray		ray;
 	t_img		screen;
 	t_img		textures[4];
 }	t_game;
@@ -134,5 +133,14 @@ int		validate_map(t_game *game);
 /* dda.c */
 void	dda_algo(t_game *g, t_ray *r, int x);
 void	init_ray_info(t_ray *ray);
+
+/* raycasting.c */
+void	raycast(t_game *game);
+
+/* render.c */
+void	init_screen(t_game *g);
+void	render_image(t_game *g, t_ray *r);
+void	my_pixel_put(t_img *img, int x, int y, int color);
+
 
 #endif
