@@ -62,6 +62,8 @@ static int	read_file(char *file, t_game *game)
 
 void	free_all_data(t_game *game)
 {
+	int	i;
+
 	if (game->map.no_path)
 		free(game->map.no_path);
 	if (game->map.so_path)
@@ -74,6 +76,14 @@ void	free_all_data(t_game *game)
 		free(game->map.raw_data);
 	if (game->map.grid)
 		free_map_grid(game->map.grid);
+	i = -1;
+	while (++i < 4)
+	{
+		if (game->mlx && game->textures[i].img)
+			mlx_destroy_image(game->mlx, game->textures[i].img);
+	}
+	if (game->mlx && game->screen.img)
+		mlx_destroy_image(game->mlx, game->screen.img);
 }
 
 int	parse_map(char *file, t_game *game)

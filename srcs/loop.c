@@ -18,3 +18,15 @@ int	main_loop(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
 	return (0);
 }
+
+int	exit_game(t_game *game)
+{
+	free_all_data(game);
+	if (game->mlx)
+	{
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
+	exit(0);
+	return (0);
+}

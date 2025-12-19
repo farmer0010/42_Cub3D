@@ -113,7 +113,7 @@ typedef struct s_game
 }	t_game;
 
 /* main.c */
-int		close_game(t_game *game);
+int		main(int ac, char **av);
 
 /* parsing.c */
 int		parse_map(char *file, t_game *game);
@@ -162,6 +162,7 @@ void	draw_vertical_line(t_game *game, t_ray *ray, int x);
 
 /* loop.c */
 int		main_loop(t_game *game);
+int     exit_game(t_game *game);
 
 /* key_event.c */
 int		close_game(t_game *game);
