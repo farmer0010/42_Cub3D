@@ -6,7 +6,7 @@
 /*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:48:12 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/19 10:29:24 by taewonki         ###   ########.fr       */
+/*   Updated: 2025/12/22 11:10:39 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ void	draw_vertical_line(t_game *game, t_ray *ray, int x);
 
 /* loop.c */
 int		main_loop(t_game *game);
-int     exit_game(t_game *game);
+int		exit_game(t_game *game);
 
 /* key_event.c */
 int		close_game(t_game *game);
