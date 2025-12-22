@@ -6,7 +6,7 @@
 /*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 12:40:12 by taewonki          #+#    #+#             */
-/*   Updated: 2025/12/22 11:31:39 by taewonki         ###   ########.fr       */
+/*   Updated: 2025/12/22 12:00:53 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ t_img	*choice_img(t_game *game, t_ray *ray)
 	if (ray->side == 0)
 	{
 		if (ray->ray_dir_x > 0)
-			return (&game->textures[2]);
+			return (&game->textures[0]);
 		else
-			return (&game->textures[3]);
+			return (&game->textures[1]);
 	}
 	else
 	{
 		if (ray->ray_dir_y > 0)
-			return (&game->textures[0]);
+			return (&game->textures[2]);
 		else
-			return (&game->textures[1]);
+			return (&game->textures[3]);
 	}
 }
 

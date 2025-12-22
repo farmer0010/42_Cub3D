@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_images.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juyoukim <juyoukim@student.42gyeongsa      +#+  +:+       +#+        */
+/*   By: taewonki <taewonki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 09:19:23 by juyoukim          #+#    #+#             */
-/*   Updated: 2025/12/18 11:00:27 by juyoukim         ###   ########.fr       */
+/*   Updated: 2025/12/22 11:59:38 by taewonki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int	load_texture(t_game *game, t_img *img, char *path)
 
 int	init_textures(t_game *game)
 {
-	if (!load_texture(game, &game->textures[0], game->map.no_path)
-		|| !load_texture(game, &game->textures[1], game->map.so_path)
-		|| !load_texture(game, &game->textures[2], game->map.we_path)
-		|| !load_texture(game, &game->textures[3], game->map.ea_path))
+	if (!load_texture(game, &game->textures[0], game->map.ea_path)
+		|| !load_texture(game, &game->textures[1],game->map.we_path)
+		|| !load_texture(game, &game->textures[2], game->map.so_path)
+		|| !load_texture(game, &game->textures[3], game->map.no_path))
 	{
 		printf("Error\nTexture loading failed\n");
 		exit_game(game);
